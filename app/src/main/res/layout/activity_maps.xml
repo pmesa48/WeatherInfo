@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/common_plus_signin_btn_text_dark_disabled"
+        android:alpha="0.5"
+        >
+        <ImageButton
+            android:id="@+id/buttonSearch"
+            android:text="S"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/search"
+            android:background="@color/common_plus_signin_btn_text_dark_disabled"
+            android:alpha="0.5"
+            />
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_toLeftOf="@+id/buttonSearch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Busca una ubicación"
+            android:layout_margin="5dp"
+            android:inputType="text"
+            android:maxLines="1"
+            />
+
+        <!-- Lots of fancy layout -->
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/common_plus_signin_btn_text_dark_disabled"
+        android:alpha="0.5">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+            android:id="@+id/weatherIcon"
+            android:src="@drawable/img"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Lugar"
+                android:id="@+id/txtPlace" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Nubes"
+                android:id="@+id/txtClouds" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Lluvia"
+                android:id="@+id/txtRain" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Temperatura"
+                android:id="@+id/txtTemp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Temperatura"
+                android:id="@+id/txtWind" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
