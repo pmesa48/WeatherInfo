@@ -1,29 +1,23 @@
 package com.pmesa48.weatherinfo;
 
 import android.Manifest;
-import android.app.ActionBar;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -40,7 +34,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -64,11 +57,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, OnTaskCompleted, LocationListener, GoogleMap.OnMarkerClickListener {
 
     public final static int COMPARISONS = 2;
+
     private GoogleMap mMap;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
+
     private GoogleApiClient client;
 
     private Location mLastLocation;
@@ -492,24 +483,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public boolean hasTwoSelectedItems()
     {
-        /*int p = 0;
-        for (int i = 0; i < markers.size(); i++ )
-        {
-            LatLng actual = markers.get(i).location.getLatLng();
-            if( marker1 != null && actual.longitude == marker1.longitude && actual.latitude == marker1.latitude)
-            {
-                p++;
-            }
-            else if(marker2 != null && actual.longitude == marker2.longitude && actual.latitude == marker2.latitude)
-            {
-                p++;
-            }
-        }
-        if( p == 2 )
-            return true;
-        else
-            return false;*/
-
         if( marker1 != null && marker2 != null) {
             String key1 = marker1.latitude + "&" + marker1.longitude;
             String key2 = marker2.latitude + "&" + marker2.longitude;
